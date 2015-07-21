@@ -11,7 +11,9 @@ to it using any dial-up or cable ISP
 
 ```
 git clone https://github.com/BjoernT/docker.git
-cd docker && docker build -t 'github/dyndns:latest' dyndns
+cd docker 
+Edit the DYN_* variables inside the Dockerfile to match your dyn-dns account
+docker build -t 'github/dyndns:latest' dyndns
 ```
 
 The build should finish within few minutes depending on you cache status of the Fedora base image
@@ -25,7 +27,7 @@ github/dyndns       latest              3042ec4f15b6        22 minutes ago      
 ## Starting a container
 
 ```
-# docker run --name dyndns -i -t 'github/dyndns:latest'
+# docker run --name dyndns -i -t -d 'github/dyndns:latest'
 ```
 
 ## Checking status off inadyn-mt
