@@ -16,25 +16,33 @@ cd docker && docker build -t 'github/dyndns:latest' dyndns
 
 The build should finish within few minutes depending on you cache status of the Fedora base image
 
-```# docker images
+```
+# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 github              dyndns:latest       3042ec4f15b6        22 minutes ago      616.5 MB
 ```
 
 ## Starting a container
 
-```# docker run --name dyndns -i -t 'dyndns:latest'```
+```
+# docker run --name dyndns -i -t 'dyndns:latest'
+```
 
 ## Checking status off inadyn-mt
 
-```# docker ps -f name=dyndns
+```
+# docker ps -f name=dyndns
 CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
 47f4ffb2a064        3042ec4f15b6        "/bin/sh -c '/usr/sb   25 minutes ago      Up 25 minutes                           dyndns
 ```
 
-```# docker logs dyndns```
+```
+# docker logs dyndns
+```
 
 A successfull update should look similar to the following message:
 
+```
 W:INADYN: Alias 'home.dnsalias.net' to IP '1.2.3.4' updated successfully.
+```
 
