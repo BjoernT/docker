@@ -9,8 +9,10 @@ to it using any dial-up or cable ISP
 
 ## How to build the docker image ?
 
+```
 git clone https://github.com/BjoernT/docker.git
 cd docker && docker build -t 'github/dyndns:latest' dyndns
+```
 
 The build should finish within few minutes depending on you cache status of the Fedora base image
 
