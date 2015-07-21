@@ -17,7 +17,7 @@ The build should finish within few minutes depending on you cache status of the 
 ```# docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 github              dyndns:latest       3042ec4f15b6        22 minutes ago      616.5 MB
-````
+```
 
 ## Starting a container
 
