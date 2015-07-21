@@ -25,7 +25,7 @@ github/dyndns       latest              3042ec4f15b6        22 minutes ago      
 ## Starting a container
 
 ```
-# docker run --name dyndns -i -t 'dyndns:latest'
+# docker run --name dyndns -i -t 'github/dyndns:latest'
 ```
 
 ## Checking status off inadyn-mt
