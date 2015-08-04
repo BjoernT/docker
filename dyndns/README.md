@@ -10,10 +10,7 @@ to it using any dial-up or cable ISP
 ## How to build the docker image ?
 
 ```
-git clone https://github.com/BjoernT/docker.git
-cd docker 
-Edit the DYN_* variables inside the Dockerfile to match your dyn-dns account
-docker build -t 'github/dyndns:latest' dyndns
+docker build -t 'bjoernt/dyndns:latest' dyndns https://raw.githubusercontent.com/BjoernT/docker/master/dyndns/Dockerfile
 ```
 
 The build should finish within few minutes depending on you cache status of the Fedora base image
@@ -21,13 +18,14 @@ The build should finish within few minutes depending on you cache status of the 
 ```
 # docker images
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-github/dyndns       latest              3042ec4f15b6        22 minutes ago      616.5 MB
+bjoernt/dyndns      latest              3042ec4f15b6        22 minutes ago      616.5 MB
 ```
 
 ## Starting a container
 
+The container needs to be started by using the predefined environment variables to pass the configuration to inadyn-mt
 ```
-# docker run --name dyndns -i -t -d 'github/dyndns:latest'
+# docker run --name dyndns -e DYN_USER=username -e DYN_PASS=password -e DYN_ALIAS=myhome.dnsalias.net -it -d 'bjoernt/dyndns:latest'
 ```
 
 ## Checking status off inadyn-mt
