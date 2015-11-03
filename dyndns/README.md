@@ -28,6 +28,13 @@ The container needs to be started by using the predefined environment variables 
 # docker run --name dyndns -e DYN_USER=username -e DYN_PASS=password -e DYN_ALIAS=myhome.dnsalias.net -it -d 'bjoernt/dyndns:latest'
 ```
 
+If you prefer to store the DYNDNS access credential in a root-only accessible file, you can pass the environment information as following
+```
+# docker run -it --env-file=/root/dyndns-env -d --restart=on-failure:50 bjoernt/dyndns
+```
+
+The option --restart sets the restart policy to 50 in case of a failure. You can set it to infinite by omitting the :50 value, whenever you want docker to monitor services.
+
 ## Checking status off inadyn-mt
 
 ```
